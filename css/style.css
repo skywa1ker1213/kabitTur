@@ -1,0 +1,712 @@
+@import url(fonts.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .top__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  background: white;
+}
+@media (max-width: 1438px) {
+  header .top__bar {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+header .top__bar-adress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1190px) {
+  header .top__bar-adress {
+    display: none;
+  }
+}
+header .top__bar-adress > a {
+  text-decoration: none;
+}
+header .top__bar-adress > a i {
+  color: #444444;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-right: 2px solid #CE0164;
+  padding-right: 30px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .top__bar-adress > p {
+  color: #444444;
+  font-family: mont;
+  font-size: 20px;
+  font-weight: 400;
+}
+header .top__bar-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1190px) {
+  header .top__bar-contact {
+    display: none;
+  }
+}
+header .top__bar-contact > a {
+  text-decoration: none;
+}
+header .top__bar-contact > a i {
+  width: 50px;
+  height: 50px;
+  color: #444444;
+  font-size: 30px;
+  border-right: 2px solid #CE0164;
+  padding-right: 30px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .top__bar-contact-number h4 > a {
+  text-decoration: none;
+  color: #8A8A8A;
+  font-family: mont;
+  font-size: 25px;
+  font-weight: 500;
+}
+@media (max-width: 1212px) {
+  header .top__bar-contact-number h4 > a {
+    font-size: 20px;
+  }
+}
+header .top__bar-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 400px) {
+  header .top__bar-btn {
+    display: none;
+  }
+}
+header .top__bar-btn > button {
+  color: #CE0164;
+  background: #444444;
+  padding: 5px 10px;
+  font-family: mont;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 10px 0px 0px 10px;
+  border: none;
+  transition: all 0.2s linear;
+}
+header .top__bar-btn > button:hover {
+  cursor: pointer;
+  background: #CE0164;
+  color: white;
+  border-radius: 10px;
+}
+header .top__bar-btn > button:nth-of-type(2) {
+  border-radius: 0px 10px 10px 0px;
+}
+header .top__bar-btn > button:nth-of-type(2):hover {
+  cursor: pointer;
+  background: #CE0164;
+  color: white;
+  border-radius: 10px;
+}
+header .top__bar .burger {
+  display: none;
+  cursor: pointer;
+  border: none;
+}
+@media (max-width: 906px) {
+  header .top__bar .burger {
+    display: block;
+  }
+}
+header .top__bar .burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: rgb(0, 0, 0);
+}
+header .top__bar .burger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+header .top__bar .burger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+header .top__bar .burger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+header nav {
+  position: relative;
+  top: 80px;
+}
+header nav .nav__conetent {
+  display: flex;
+  justify-content: end;
+  margin-top: 60px;
+}
+header nav .nav__conetent .nav__img {
+  position: absolute;
+  width: 800px;
+  left: -100px;
+  top: -60px;
+  z-index: -1;
+}
+@media (max-width: 692px) {
+  header nav .nav__conetent .nav__img {
+    width: 100%;
+  }
+}
+@media (max-width: 536px) {
+  header nav .nav__conetent .nav__img {
+    left: 0;
+  }
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent {
+    justify-content: center;
+  }
+}
+header nav .nav__conetent .nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: fixed;
+  z-index: 2;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav__list {
+    position: fixed;
+    right: -100%;
+    flex-direction: column;
+    background: #33319B;
+    top: 113px;
+    text-align: center;
+    transition: 0.3s linear;
+    padding-top: 50px;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: 50px;
+    height: 100%;
+  }
+  header nav .nav__conetent .nav__list.active {
+    right: 0;
+  }
+}
+header nav .nav__conetent .nav__list li {
+  list-style: none;
+}
+header nav .nav__conetent .nav__list li > a {
+  color: #8A8A8A;
+  font-family: "mont";
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav__list li > a {
+    color: white;
+  }
+}
+header nav .nav__conetent .nav-adress {
+  display: none;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-adress {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header nav .nav__conetent .nav-adress > a {
+  text-decoration: none;
+}
+header nav .nav__conetent .nav-adress > a i {
+  color: #444444;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-right: 2px solid #CE0164;
+  padding-right: 30px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-adress > a i {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
+    color: white;
+  }
+}
+header nav .nav__conetent .nav-adress > p {
+  color: #444444;
+  font-family: mont;
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-adress > p {
+    color: white;
+  }
+}
+header nav .nav__conetent .nav-contact {
+  display: none;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header nav .nav__conetent .nav-contact > a {
+  text-decoration: none;
+}
+header nav .nav__conetent .nav-contact > a i {
+  width: 50px;
+  height: 50px;
+  color: #444444;
+  font-size: 30px;
+  border-right: 2px solid #CE0164;
+  padding-right: 30px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-contact > a i {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
+    color: white;
+  }
+}
+header nav .nav__conetent .nav-contact-number h4 > a {
+  text-decoration: none;
+  color: #8A8A8A;
+  font-family: mont;
+  font-size: 25px;
+  font-weight: 500;
+}
+@media (max-width: 1212px) {
+  header nav .nav__conetent .nav-contact-number h4 > a {
+    font-size: 20px;
+  }
+}
+@media (max-width: 906px) {
+  header nav .nav__conetent .nav-contact-number h4 > a {
+    color: white;
+  }
+}
+header nav.sticky {
+  top: 70px;
+}
+
+main .travel {
+  margin-top: 150px;
+}
+main .travel__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1438px) {
+  main .travel__content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 974px) {
+  main .travel__content {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 974px) {
+  main .travel__content .travel__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+}
+main .travel__content .travel__info h1 {
+  color: #444444;
+  font-family: "mont";
+  font-size: 50px;
+  font-weight: 700;
+}
+@media (max-width: 1100px) {
+  main .travel__content .travel__info h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 974px) {
+  main .travel__content .travel__info h1 {
+    text-align: center;
+  }
+}
+@media (max-width: 522px) {
+  main .travel__content .travel__info h1 {
+    font-size: 35px;
+  }
+}
+main .travel__content .travel__info p {
+  color: #8A8A8A;
+  font-family: "mont";
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+@media (max-width: 974px) {
+  main .travel__content .travel__info p {
+    text-align: center;
+  }
+}
+main .travel__content .travel__info button {
+  background: #33319B;
+  color: white;
+  font-family: "mont";
+  font-size: 20px;
+  font-weight: 500;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+  margin-top: 40px;
+}
+@media (max-width: 354px) {
+  main .travel__content .travel__info button {
+    font-size: 16px;
+  }
+}
+main .travel__content .travel__info button:hover {
+  background: white;
+  color: #33319B;
+  border: 2px solid #33319B;
+  box-shadow: 0px 0px 10px #33319B;
+  cursor: pointer;
+}
+main .travel__content .travel__block > img {
+  width: 545px;
+  height: 500px;
+}
+@media (max-width: 570px) {
+  main .travel__content .travel__block > img {
+    width: 100%;
+    height: auto !important;
+  }
+}
+main .about {
+  position: relative;
+  margin-top: 150px;
+}
+main .about .about__box-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .about .about__box-bg .about__bg {
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+}
+@media (max-width: 1042px) {
+  main .about .about__box-bg .about__bg {
+    width: 100%;
+  }
+}
+main .about__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1322px) {
+  main .about__content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1108px) {
+  main .about__content {
+    flex-direction: column;
+  }
+}
+main .about__content .about__block > img {
+  width: 600px;
+  height: 600px;
+}
+@media (max-width: 612px) {
+  main .about__content .about__block > img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 1108px) {
+  main .about__content .about__info {
+    margin-top: 50px;
+  }
+}
+main .about__content .about__info > h4 {
+  color: #CE0164;
+  font-family: "mont";
+  font-size: 25px;
+  font-weight: 500;
+}
+@media (max-width: 394px) {
+  main .about__content .about__info > h4 {
+    text-align: center;
+  }
+}
+main .about__content .about__info h2 {
+  color: #444444;
+  font-family: "mont";
+  font-size: 40px;
+  font-weight: 700;
+}
+@media (max-width: 422px) {
+  main .about__content .about__info h2 {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 394px) {
+  main .about__content .about__info h2 {
+    text-align: center;
+  }
+}
+@media (max-width: 346px) {
+  main .about__content .about__info h2 {
+    font-size: 25px;
+  }
+}
+main .about__content .about__info p {
+  color: #8A8A8A;
+  font-family: "mont";
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+@media (max-width: 512px) {
+  main .about__content .about__info p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 394px) {
+  main .about__content .about__info p {
+    text-align: center;
+  }
+}
+main .about__content .about__info .about__services h3 {
+  color: #444444;
+  font-family: "mont";
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  margin-top: 15px;
+}
+main .about__content .about__info .about__services h3 > i {
+  margin-right: 20px;
+  font-size: 20px;
+}
+main .about__content .about__info .about__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+@media (max-width: 488px) {
+  main .about__content .about__info .about__box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 394px) {
+  main .about__content .about__info .about__box {
+    align-items: center;
+  }
+}
+main .about__content .about__info .about__box-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 488px) {
+  main .about__content .about__info .about__box-price {
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 394px) {
+  main .about__content .about__info .about__box-price {
+    align-items: center;
+  }
+}
+main .about__content .about__info .about__box-price > h5 {
+  color: #CE0164;
+  font-family: "mont";
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+@media (max-width: 400px) {
+  main .about__content .about__info .about__box-price > h5 {
+    font-size: 25px;
+  }
+}
+main .about__content .about__info .about__box-price > h4 {
+  color: #444444;
+  font-family: "mont";
+  font-size: 25px;
+  font-weight: 500;
+}
+main .tours {
+  margin-top: 100px;
+}
+main .tours__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  place-items: center;
+  gap: 30px;
+}
+@media (max-width: 1426px) {
+  main .tours__content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 368px) {
+  main .tours__content {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
+  }
+}
+main .tours__content > div {
+  width: 320px;
+  height: 500px;
+  background: white;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+@media (max-width: 368px) {
+  main .tours__content > div {
+    width: 250px;
+  }
+}
+main .tours__content > div .tours__box > img {
+  width: 280px;
+  height: 200px;
+  border-radius: 10px;
+}
+@media (max-width: 368px) {
+  main .tours__content > div .tours__box > img {
+    width: 230px;
+    height: auto;
+  }
+}
+main .tours__content > div .tours__info > h4 {
+  color: #CE0164;
+  font-family: "mont";
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+main .tours__content > div .tours__info > p {
+  color: #8A8A8A;
+  font-family: "mont";
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+main .tours__content > div .tours__info > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #8A8A8A;
+  padding-bottom: 20px;
+}
+main .tours__content > div .tours__info > div > h4 {
+  color: black;
+  font-family: "mont";
+  font-size: 25px;
+  font-weight: 500;
+}
+main .tours__content > div .tours__info > div > h4 > span {
+  color: #CE0164;
+}
+@media (max-width: 368px) {
+  main .tours__content > div .tours__info > div > h4 {
+    font-size: 20px;
+  }
+}
+main .tours__content > div .tours__info > div > h3 {
+  color: black;
+  font-family: "mont";
+  font-size: 20px;
+  font-weight: 500;
+}
+@media (max-width: 368px) {
+  main .tours__content > div .tours__info > div > h3 {
+    font-size: 18px;
+  }
+}
+main .tours__content > div .tours__info button {
+  width: 140px;
+  height: 40px;
+  color: white;
+  background: #33319B;
+  font-family: "mont";
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+}
+main .tours__content > div .tours__info button:hover {
+  color: #33319B;
+  background: white;
+  border: 2px solid #33319B;
+  box-shadow: 0px 0px 10px #33319B;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
